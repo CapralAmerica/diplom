@@ -1,0 +1,61 @@
+{% extends 'layouts/master.html.twig' %}
+{% block title %} Анкета пользователя {% endblock %}
+{% block styles %}
+    <link href="{{ asset('css/sign_in.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="col-lg-4"></div>
+    <div class="col-lg-7">
+        <div class="col-lg-3"></div>
+        <div class="card col-lg-6 mt-3">
+            <div class="card-body">
+                <form method="POST" action="{{ path('interview_answers') }}">
+                    <p class="text-center">Ответьте пожалуйста на несколько вопросов</p>
+                    <div class="form-group">
+                        <label  class="col-sm-8 col-form-label">{{ question1 }}</label>
+                        <div class="col-sm-4">
+                            <div class="md-form mt-0">
+                                <select  class="form-control" title="answer1" name="answer1" id="">
+                                    <option value="9-12">С 9 до 12-00</option>
+                                    <option value="12-17">С 12 до 17-00</option>
+                                    <option value="17-21">С 17 до 21-00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-8 col-form-label">{{ question2 }}</label>
+                        <div class="col-sm-4">
+                            <div class="md-form mt-0">
+                                <select  class="form-control" title="answer2" name="answer2" id="">
+                                    <option value="test">Косметологические услуги</option>
+                                    <option value="test">Парикмахерские услуги</option>
+                                    <option value="test">Массаж</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-8 col-form-label">{{ question3 }}</label>
+                        <div class="col-sm-4">
+                            <div class="md-form mt-0">
+                                <select  class="form-control" title="answer3" name="answer3" id="">
+                                    <option value="test">Сайт</option>
+                                    <option value="test">Социальные сети</option>
+                                    <option value="test">От друзей</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <input style="display:none" type="submit" name="submit" value="Get Selected Values" />
+                    <div class="text-center mt-4">
+                        <input type="submit" class="btn btn-primary" name="submit" value="Продолжить" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+
+
+{% endblock %}

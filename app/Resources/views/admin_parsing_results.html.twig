@@ -1,0 +1,50 @@
+{% extends 'layouts/admin.html.twig' %}
+{% block title %} Данные парсинга {% endblock %}
+{% block header %} {% include 'parts/admin_header.html.twig' %} {% endblock %}
+{% block content %}
+      <div class="col-sm-3 mt-3"></div>
+      <div class="form-group row mt-3 wrapper ml-3">
+        <div class="card col-sm-5 mr-3">
+            <div class="card-header">
+                <h5 class="text-center">{{ lambre[0].name }}</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-stripped">
+                    <thead>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    </thead>
+                    <tbody>
+                    {% for item in lambre %}
+                    <tr>
+                        <td>{{ item.item }}</td>
+                        <td>{{ item.price }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+          <div class="card col-sm-5 ml-3">
+              <div class="card-header">
+                  <h5 class="text-center">{{ bigl[0].name }}</h5>
+              </div>
+              <div class="card-body">
+                  <table class="table table-stripped">
+                      <thead>
+                      <th>Название</th>
+                      <th>Цена</th>
+                      </thead>
+                      <tbody>
+                      {% for item_bigl in bigl %}
+                          <tr>
+                              <td>{{ item_bigl.item }}</td>
+                              <td>{{ item_bigl.price }}</td>
+                          </tr>
+                      {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+    </div>
+{% endblock %}

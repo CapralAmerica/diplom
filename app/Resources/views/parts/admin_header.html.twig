@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark" style="width: 100%">
+    <a class="navbar-brand" href="{{ path('home') }}">Главная</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{{ path('admin_users') }}">Пользователи</a>
+            <a class="nav-item nav-link" href="{{ path('admin_statistics') }}">Статистика</a>
+            <a class="nav-item nav-link" href="{{ path('parser') }}">Парсер</a>
+            <a class="nav-item nav-link" href="{{ path('admin_birthday') }}">Именинники</a>
+        </div>
+    </div>
+</nav>

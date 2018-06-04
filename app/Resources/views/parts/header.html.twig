@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark  elegant-color-dark" style="width: 100%">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('home') }}">Главная страница
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                {% if app.session.get('username') == null %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('sign_in') }}">Войти</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('sign_up') }}">Зарегистрироваться</a>
+                </li>
+                {% endif %}
+                {% if app.session.get('username') %}
+                <li class="nav-item dropdown ml-3">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user prefix grey-text"></i>{{ app.session.get('username') }}</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ path('logout') }}">Выйти</a>
+                    </div>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('services') }}">Цены</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('gallery') }}">Галерея</a>
+                </li>
+             </ul>
+        </div>
+ </nav>
